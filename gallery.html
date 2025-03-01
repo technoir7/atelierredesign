@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Atelier School of Classical Realism</title>
+    <meta name="description" content="Explore the exceptional artwork by students and faculty of the Atelier School of Classical Realism, showcasing traditional drawing and painting techniques.">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Premium Header (same as index.html for consistency) -->
+    <header class="site-header" style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 15px 0; transition: all 0.3s ease; background-color: rgba(29, 35, 39, 0.95); box-shadow: 0 5px 20px rgba(0,0,0,0.2);">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <a href="index.html" style="text-decoration: none; display: block;">
+                    <span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #ffffff; display: block; line-height: 1;">Atelier School</span>
+                    <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #a8834c; text-transform: uppercase; letter-spacing: 3px;">of Classical Realism</span>
+                </a>
+            </div>
+            <nav>
+                <ul style="display: flex; list-style: none; margin: 0; padding: 0; gap: 40px; align-items: center;">
+                    <li><a href="index.html#about" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">About</a></li>
+                    <li><a href="index.html#faculty" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Faculty</a></li>
+                    <li><a href="gallery.html" style="font-family: 'Montserrat', sans-serif; color: #a8834c; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; border-bottom: 2px solid #a8834c; padding-bottom: 5px;">Gallery</a></li>
+                    <li><a href="index.html#classes" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Classes</a></li>
+                    <li><a href="index.html#calendar" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">Calendar</a></li>
+                    <li><a href="index.html#contact" style="display: inline-block; background-color: #a8834c; color: white; padding: 12px 25px; text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; border: none; font-family: 'Montserrat', sans-serif; font-size: 12px; transition: all 0.3s ease;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Hero Section -->
+    <section style="padding-top: 150px; position: relative; background-color: #1d2327; overflow: hidden; height: 400px; display: flex; align-items: center; justify-content: center;">
+        <!-- Background pattern -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%221%22 height=%221%22 fill=%22%23a8834c%22 opacity=%220.03%22/%3E%3C/svg%3E'); opacity: 0.5;"></div>
+        
+        <!-- Accent lines -->
+        <div style="position: absolute; top: 30%; left: 10%; width: 1px; height: 100px; background: linear-gradient(to bottom, rgba(168,131,76,1), rgba(168,131,76,0));"></div>
+        <div style="position: absolute; top: 50%; right: 10%; width: 1px; height: 100px; background: linear-gradient(to bottom, rgba(168,131,76,1), rgba(168,131,76,0));"></div>
+        
+        <div style="text-align: center; position: relative; z-index: 10; max-width: 800px; padding: 0 30px;">
+            <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: #ffffff; margin-bottom: 20px; font-weight: 300; line-height: 1.1;">
+                <span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #a8834c; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;">Masters in Training</span>
+                Artwork Gallery
+                <span style="display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; margin-top: 10px; font-weight: 300; color: rgba(255,255,255,0.7);">Excellence in traditional techniques</span>
+            </h1>
+            
+            <div style="width: 60px; height: 2px; background-color: #a8834c; margin: 0 auto 30px;"></div>
+            
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: #e9e4da; max-width: 600px; margin: 0 auto; font-weight: 300; line-height: 1.8;">Discover the exceptional artwork by our students and faculty, showcasing mastery of classical techniques and artistic tradition.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section style="background-color: #f8f5f1; padding: 40px 0; position: relative;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px;">
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <button class="filter-btn active" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #a8834c; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="all">All Works</button>
+                
+                <button class="filter-btn" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #1d2327; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="paintings">Paintings</button>
+                
+                <button class="filter-btn" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #1d2327; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="drawings">Drawings</button>
+                
+                <button class="filter-btn" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #1d2327; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="faculty">Faculty Work</button>
+                
+                <button class="filter-btn" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #1d2327; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="student">Student Work</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Gallery Grid -->
+    <section style="padding: 80px 0; background-color: #ffffff; position: relative;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px;">
+            <!-- Masonry gallery grid -->
+            <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-auto-rows: 300px; grid-auto-flow: dense; gap: 20px;">
+                <!-- Artwork 1 -->
+                <div class="gallery-item" style="grid-row: span 2; grid-column: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/david-hardy-deyoung.jpg" alt="Classical Portrait Study" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: white; margin-bottom: 5px;">Classical Portrait Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 2 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings student">
+                    <img src="images/class1.jpg" alt="Figure Study" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Figure Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Charcoal on Paper</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Student Work</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 3 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings student">
+                    <img src="images/lifedrawing.jpg" alt="Academic Figure" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Academic Figure</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Pencil on Paper</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Student Work</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 4 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings student">
+                    <img src="images/class2.jpg" alt="Portrait Study" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Portrait Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Student Work</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 5 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings student">
+                    <img src="images/maskdrawing.jpg" alt="Cast Drawing" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Cast Drawing</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Charcoal on Paper</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Student Work</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 6 -->
+                <div class="gallery-item" style="grid-row: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/david-hardy1.jpg" alt="Traditional Portrait" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Traditional Portrait</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 7 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/david-hardy-brushes.jpg" alt="Studio Demo" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Studio Demonstration</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil Painting Technique</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 8 -->
+                <div class="gallery-item" style="grid-column: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings student">
+                    <img src="images/IMG_1814.jpg" alt="Master Copy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Master Copy Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Graphite on Paper</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Advanced Student Work</p>
+                    </div>
+                </div>
+                
+                <!-- NEW ARTWORKS START HERE -->
+                
+                <!-- Artwork 9 -->
+                <div class="gallery-item" style="grid-row: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/dh22-lrg.jpg" alt="Still Life with Flowers" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Still Life with Flowers</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 10 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/Hardy_yellowLotus.jpg" alt="Yellow Lotus" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Yellow Lotus</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 11 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/Hardy_SunsetwithEveningStar.jpg" alt="Sunset with Evening Star" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Sunset with Evening Star</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 12 -->
+                <div class="gallery-item" style="grid-row: span 1; grid-column: span 1; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings faculty">
+                    <img src="images/Hardy_ChineseLionDog.jpg" alt="Chinese Lion Dog" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Chinese Lion Dog</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Pencil Drawing</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 13 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/Hardy_PortraitofAugust.jpg" alt="Portrait of August" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Portrait of August</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">David Hardy (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 14 -->
+                <div class="gallery-item" style="grid-column: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings faculty">
+                    <img src="images/CharlieAntolin_Micheal.jpg" alt="Study of Michael" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Study of Michael</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Charcoal and Chalk</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Charlie Antolin (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 15 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings faculty">
+                    <img src="images/CharlieAntolin_DrawingOfHandPreporatoryDrawing.jpg" alt="Hand Study" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Hand Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Preparatory Drawing</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Charlie Antolin (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 16 -->
+                <div class="gallery-item" style="grid-row: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
+                    <img src="images/CharlesAntolin_Van_2.jpeg" alt="Study of a Portrait" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Portrait Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Oil on Canvas</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Charlie Antolin (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 17 -->
+                <div class="gallery-item" style="grid-column: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings faculty">
+                    <img src="images/CharlieAntolin_SampleAnatomyNotes1.jpg" alt="Anatomy Study" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Anatomical Study</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Instructional Drawing</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Charlie Antolin (Faculty)</p>
+                    </div>
+                </div>
+                
+                <!-- Artwork 18 -->
+                <div class="gallery-item" style="position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="drawings faculty">
+                    <img src="images/CharlieAntolin_SampleAnatomyNotes2.jpg" alt="Skeletal Anatomy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px; background: linear-gradient(to top, rgba(29,35,39,0.8), rgba(29,35,39,0)); transform: translateY(20px); opacity: 0; transition: all 0.5s ease;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: white; margin-bottom: 5px;">Skeletal Anatomy</h3>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #a8834c; margin-bottom: 10px;">Instructional Study</p>
+                        <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #ffffff;">Charlie Antolin (Faculty)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #1d2327; color: #ffffff; padding: 80px 0 40px;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 60px; margin-bottom: 60px;">
+                <!-- Column 1 -->
+                <div>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 20px; font-weight: 400;">Atelier School</h3>
+                    <span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 12px; color: #a8834c; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">of Classical Realism</span>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #e9e4da; margin-bottom: 20px;">Excellence in traditional art education, preserving classical techniques through personalized instruction and mentorship.</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #a8834c; margin-bottom: 20px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">Quick Links</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 15px;"><a href="index.html#about" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">About</a></li>
+                        <li style="margin-bottom: 15px;"><a href="index.html#faculty" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Faculty</a></li>
+                        <li style="margin-bottom: 15px;"><a href="gallery.html" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Gallery</a></li>
+                        <li style="margin-bottom: 15px;"><a href="index.html#classes" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Classes</a></li>
+                        <li style="margin-bottom: 15px;"><a href="index.html#calendar" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Calendar</a></li>
+                        <li><a href="index.html#contact" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; transition: all 0.3s ease;">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 16px; color: #a8834c; margin-bottom: 20px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px;">Contact Us</h3>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #e9e4da; margin-bottom: 10px;">1000 Art Studio Way, Suite 100<br>Oakland, CA 94610</p>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #e9e4da; margin-bottom: 10px;">Phone: (555) 555-5555</p>
+                    <p style="font-size: 1rem; line-height: 1.8; color: #e9e4da; margin-bottom: 20px;">Email: info@atelierschool.com</p>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; text-align: center;">
+                <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: rgba(255,255,255,0.6);">&copy; 2023 Atelier School of Classical Realism. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery hover effects
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    // Scale image
+                    const img = this.querySelector('img');
+                    img.style.transform = 'scale(1.05)';
+                    
+                    // Show overlay
+                    const overlay = this.querySelector('div[style*="background: rgba(29,35,39,0.2)"]');
+                    overlay.style.opacity = '1';
+                    
+                    // Show caption
+                    const caption = this.querySelector('div[style*="position: absolute; bottom: 0"]');
+                    caption.style.transform = 'translateY(0)';
+                    caption.style.opacity = '1';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    // Reset image
+                    const img = this.querySelector('img');
+                    img.style.transform = 'scale(1)';
+                    
+                    // Hide overlay
+                    const overlay = this.querySelector('div[style*="background: rgba(29,35,39,0.2)"]');
+                    overlay.style.opacity = '0';
+                    
+                    // Hide caption
+                    const caption = this.querySelector('div[style*="position: absolute; bottom: 0"]');
+                    caption.style.transform = 'translateY(20px)';
+                    caption.style.opacity = '0';
+                });
+            });
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.style.color = '#1d2327';
+                        btn.classList.remove('active');
+                    });
+                    
+                    this.style.color = '#a8834c';
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+                
+                // Add hover effect to buttons
+                button.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.color = '#a8834c';
+                    }
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.color = '#1d2327';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
