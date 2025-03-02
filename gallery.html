@@ -102,6 +102,40 @@
                 background: rgba(29,35,39,0.4) !important;
             }
         }
+        
+        /* Mobile-specific gallery fixes */
+        @media only screen and (max-width: 767px) {
+            .gallery-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            .gallery-item {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+                min-height: 300px !important;
+            }
+            
+            .gallery-item img {
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+            
+            .gallery-item div[style*="opacity: 0"] {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            
+            section {
+                background-color: #1d2327 !important;
+                padding: 40px 0 !important;
+            }
+            
+            [style*="background-color: #f8f5f1"],
+            [style*="background-color: #ffffff"] {
+                background-color: #1d2327 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -186,11 +220,11 @@
     </section>
 
     <!-- Main Gallery Grid -->
-    <section style="padding: 80px 0; background-color: #ffffff; position: relative;">
+    <section style="padding: 80px 0; background-color: #1d2327; position: relative;">
         <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px;">
             <!-- Masonry gallery grid -->
             <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-auto-rows: 300px; grid-auto-flow: dense; gap: 20px;">
-                <!-- Artwork 1 -->
+                <!-- Gallery items -->
                 <div class="gallery-item" style="grid-row: span 2; grid-column: span 2; position: relative; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);" data-category="paintings faculty">
                     <img src="images/art/dh24-lrg.jpg" alt="Classical Portrait Study" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                     
@@ -723,28 +757,280 @@
                                 paragraph.style.color = '#e9e4da';
                             }
                         });
+                        }
+                    });
+                    
+                    // Add dark background to the filter section
+                    const filterSection = document.querySelector('section[style*="background-color: #f8f5f1"]');
+                    if (filterSection) {
+                        filterSection.style.backgroundColor = '#1d2327';
+                    }
+                    
+                    // Add dark background to the gallery section
+                    const gallerySection = document.querySelector('section[style*="background-color: #ffffff"]');
+                    if (gallerySection) {
+                        gallerySection.style.backgroundColor = '#1d2327';
+                    }
+                    
+                    // Apply dark theme to filter buttons
+                    const filterButtons = document.querySelectorAll('.filter-btn');
+                    filterButtons.forEach(function(button) {
+                        if (!button.classList.contains('active')) {
+                            button.style.color = '#e9e4da';
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    
+    <!-- Theme Testing Tool -->
+    <script>
+        // Run this script to test mobile theme consistency
+        document.addEventListener('DOMContentLoaded', function() {
+            // Only run on mobile
+            if (window.innerWidth <= 767) {
+                // Add a toggle button to show/hide the test UI
+                const testToggle = document.createElement('button');
+                testToggle.textContent = 'Debug Theme';
+                testToggle.style.position = 'fixed';
+                testToggle.style.bottom = '10px';
+                testToggle.style.right = '10px';
+                testToggle.style.zIndex = '99999';
+                testToggle.style.background = '#ff3300';
+                testToggle.style.color = 'white';
+                testToggle.style.padding = '8px';
+                testToggle.style.border = 'none';
+                testToggle.style.borderRadius = '4px';
+                testToggle.style.fontSize = '12px';
+                document.body.appendChild(testToggle);
+                
+                let testActive = false;
+                const problemSections = [];
+                
+                // Toggle test mode on button click
+                testToggle.addEventListener('click', function() {
+                    testActive = !testActive;
+                    
+                    if (testActive) {
+                        // Analyze all sections
+                        document.querySelectorAll('section, div').forEach(function(element) {
+                            // Get computed style
+                            const style = window.getComputedStyle(element);
+                            const bgColor = style.backgroundColor;
+                            const bgImage = style.backgroundImage;
+                            
+                            // Check if it has a light background
+                            if (isLightBackground(bgColor, bgImage)) {
+                                // Mark the element as problematic
+                                element.style.outline = '3px solid red';
+                                problemSections.push(element);
+                                
+                                // Add the element info
+                                const info = document.createElement('div');
+                                info.textContent = 'LIGHT BG: ' + bgColor;
+                                info.style.position = 'absolute';
+                                info.style.top = '0';
+                                info.style.left = '0';
+                                info.style.background = 'red';
+                                info.style.color = 'white';
+                                info.style.padding = '3px';
+                                info.style.fontSize = '10px';
+                                info.style.zIndex = '9999';
+                                info.className = 'debug-info';
+                                
+                                // Store original position if needed
+                                if (style.position === 'static') {
+                                    element.style.position = 'relative';
+                                }
+                                
+                                element.appendChild(info);
+                            }
+                        });
+                        
+                        // Show results in console
+                        console.log('Found ' + problemSections.length + ' elements with light backgrounds');
+                        
+                        testToggle.textContent = 'Hide Debug (Found ' + problemSections.length + ')';
+                        testToggle.style.background = 'green';
+                    } else {
+                        // Remove debug outlines and info
+                        document.querySelectorAll('.debug-info').forEach(el => el.remove());
+                        problemSections.forEach(function(element) {
+                            element.style.outline = '';
+                        });
+                        
+                        testToggle.textContent = 'Debug Theme';
+                        testToggle.style.background = '#ff3300';
                     }
                 });
                 
-                // Add dark background to the filter section
+                // Helper function to check if a background is light
+                function isLightBackground(bgColor, bgImage) {
+                    // If there's no background or it's transparent
+                    if (bgColor === 'rgba(0, 0, 0, 0)' && bgImage === 'none') {
+                        return false;
+                    }
+                    
+                    // Check if background image is a gradient
+                    if (bgImage !== 'none' && !bgImage.includes('linear-gradient(to right, rgb(29, 35, 39)')) {
+                        // We could do more detailed analysis, but for now assume non-gradient images are OK
+                        return false;
+                    }
+                    
+                    // Parse the RGB values
+                    let r, g, b;
+                    
+                    if (bgColor.startsWith('rgb')) {
+                        const match = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+                        if (match) {
+                            r = parseInt(match[1]);
+                            g = parseInt(match[2]);
+                            b = parseInt(match[3]);
+                        }
+                    } else if (bgColor.startsWith('#')) {
+                        r = parseInt(bgColor.slice(1, 3), 16);
+                        g = parseInt(bgColor.slice(3, 5), 16);
+                        b = parseInt(bgColor.slice(5, 7), 16);
+                    } else {
+                        // If we can't parse the color, be conservative
+                        return false;
+                    }
+                    
+                    // Calculate relative luminance
+                    // Formula: 0.299*R + 0.587*G + 0.114*B
+                    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+                    
+                    // If luminance > 0.5, it's a light color
+                    return luminance > 0.5;
+                }
+            }
+        });
+    </script>
+    
+    <!-- Comprehensive Dark Theme Override -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Only apply to mobile devices
+            if (window.innerWidth <= 767) {
+                console.log('Applying comprehensive dark theme overrides to gallery');
+                
+                // 1. Force dark background on all sections
+                document.querySelectorAll('section').forEach(function(section) {
+                    section.style.backgroundColor = '#1d2327';
+                    section.style.color = '#e9e4da';
+                });
+                
+                // 2. Fix the filter section specifically
                 const filterSection = document.querySelector('section[style*="background-color: #f8f5f1"]');
                 if (filterSection) {
                     filterSection.style.backgroundColor = '#1d2327';
+                    filterSection.style.color = '#e9e4da';
                 }
                 
-                // Add dark background to the gallery section
+                // 3. Fix the gallery section specifically
                 const gallerySection = document.querySelector('section[style*="background-color: #ffffff"]');
                 if (gallerySection) {
                     gallerySection.style.backgroundColor = '#1d2327';
+                    gallerySection.style.color = '#e9e4da';
                 }
                 
-                // Apply dark theme to filter buttons
-                const filterButtons = document.querySelectorAll('.filter-btn');
-                filterButtons.forEach(function(button) {
+                // 4. Fix all filter buttons for dark background
+                document.querySelectorAll('.filter-btn').forEach(function(button) {
                     if (!button.classList.contains('active')) {
                         button.style.color = '#e9e4da';
+                    } else {
+                        button.style.color = '#a8834c';
                     }
                 });
+                
+                // 5. Make sure gallery item captions remain visible
+                document.querySelectorAll('.gallery-item h3').forEach(function(heading) {
+                    heading.style.color = '#ffffff';
+                });
+                
+                document.querySelectorAll('.gallery-item p').forEach(function(paragraph) {
+                    if (!paragraph.style.color || !paragraph.style.color.includes('#a8834c')) {
+                        paragraph.style.color = '#e9e4da';
+                    }
+                });
+                
+                // 6. Make overlay backgrounds a bit darker for better contrast
+                document.querySelectorAll('[style*="background: linear-gradient(to top, rgba(29,35,39,0.8)"]').forEach(function(overlay) {
+                    overlay.style.background = 'linear-gradient(to top, rgba(29,35,39,0.9), rgba(29,35,39,0.5))';
+                });
+                
+                // 7. Make sure inner containers have transparent backgrounds to avoid conflicts
+                document.querySelectorAll('div[style*="max-width: 1400px"]').forEach(function(container) {
+                    if (container.parentElement && container.parentElement.tagName === 'SECTION') {
+                        container.style.backgroundColor = 'transparent';
+                    }
+                });
+                
+                // 8. Fix any elements with specific background colors
+                document.querySelectorAll('div[style*="background-color: #fff"], div[style*="background-color: white"], div[style*="background-color: #ffffff"], div[style*="background-color: #f8f5f1"]').forEach(function(div) {
+                    div.style.backgroundColor = '#1d2327';
+                });
+                
+                // 9. Fix any divs with linear gradients (except gold accent lines)
+                document.querySelectorAll('div[style*="linear-gradient"]').forEach(function(div) {
+                    if (!div.style.background.includes('linear-gradient(to right, #a8834c')) {
+                        div.style.background = 'transparent';
+                    }
+                });
+                
+                // 10. Ensure all headings are visible
+                document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function(heading) {
+                    if (!heading.style.color || !heading.style.color.includes('#a8834c')) {
+                        heading.style.color = '#ffffff';
+                    }
+                });
+                
+                // 11. Ensure all paragraphs have proper contrast
+                document.querySelectorAll('p').forEach(function(paragraph) {
+                    if (!paragraph.style.color || !paragraph.style.color.includes('#a8834c')) {
+                        paragraph.style.color = '#e9e4da';
+                    }
+                });
+                
+                // Final sweep for any elements with white background
+                setTimeout(function() {
+                    const allElements = document.querySelectorAll('*');
+                    for (let i = 0; i < allElements.length; i++) {
+                        const element = allElements[i];
+                        const style = window.getComputedStyle(element);
+                        const bgColor = style.backgroundColor;
+                        
+                        // Check if it's a light background color (skip transparent)
+                        if (bgColor !== 'rgba(0, 0, 0, 0)' && isLightBackground(bgColor)) {
+                            element.style.backgroundColor = '#1d2327';
+                        }
+                    }
+                    
+                    // Helper function to check if a background is light
+                    function isLightBackground(bgColor) {
+                        // Parse the RGB values
+                        let r, g, b;
+                        
+                        if (bgColor.startsWith('rgb')) {
+                            const match = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+                            if (match) {
+                                r = parseInt(match[1]);
+                                g = parseInt(match[2]);
+                                b = parseInt(match[3]);
+                            }
+                        } else {
+                            return false;
+                        }
+                        
+                        // Calculate relative luminance
+                        // Formula: 0.299*R + 0.587*G + 0.114*B
+                        const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+                        
+                        // If luminance > 0.5, it's a light color
+                        return luminance > 0.5;
+                    }
+                }, 500);
             }
         });
     </script>
