@@ -216,27 +216,56 @@ function initFadeInAnimations() {
  * Calendar filtering functionality
  */
 function initCalendarFilter() {
-    // This would have more functionality in a real implementation
-    // For now, just add hover effects to calendar cards
     const calendarCards = document.querySelectorAll('.calendar-card');
     
     calendarCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
-            this.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.12)';
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 25px 50px rgba(168,131,76,0.2)';
+            
+            // Enhance the gold section
+            const goldSection = this.querySelector('div:first-child');
+            if (goldSection) {
+                goldSection.style.background = '#8a6b3d';
+                goldSection.style.transition = 'all 0.3s ease';
+            }
+            
+            // Enhance the image
+            const imageContainer = this.querySelector('div:nth-child(2) > div:first-child');
+            if (imageContainer) {
+                imageContainer.style.borderColor = '#a8834c';
+                imageContainer.style.transition = 'all 0.3s ease';
+            }
+            
+            // Enhance the title
+            const title = this.querySelector('h4');
+            if (title) {
+                title.style.color = '#a8834c';
+                title.style.transition = 'all 0.3s ease';
+            }
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.05)';
-        });
-        
-        // Make cards clickable - would link to class details in full implementation
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', function() {
-            const className = this.querySelector('h4').textContent;
-            const instructor = this.querySelector('.calendar-instructor').textContent.replace('Instructor: ', '');
-            alert(`Class: ${className}\n${instructor}\n\nClick to register for this class.`);
+            this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+            
+            // Reset the gold section
+            const goldSection = this.querySelector('div:first-child');
+            if (goldSection) {
+                goldSection.style.background = '#a8834c';
+            }
+            
+            // Reset the image
+            const imageContainer = this.querySelector('div:nth-child(2) > div:first-child');
+            if (imageContainer) {
+                imageContainer.style.borderColor = 'rgba(168,131,76,0.3)';
+            }
+            
+            // Reset the title
+            const title = this.querySelector('h4');
+            if (title) {
+                title.style.color = '#1d2327';
+            }
         });
     });
 }
