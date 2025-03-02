@@ -78,6 +78,29 @@
             header nav ul {
                 display: none !important;
             }
+            
+            /* Ensure captions are always visible regardless of background */
+            .gallery-item h3 {
+                color: white !important;
+            }
+            
+            .gallery-item p {
+                color: #e9e4da !important;
+            }
+            
+            .gallery-item p[style*="color: #a8834c"] {
+                color: #a8834c !important;
+            }
+            
+            /* Improve caption background for better readability */
+            .gallery-item [style*="background: linear-gradient"] {
+                background: linear-gradient(to top, rgba(29,35,39,0.9), rgba(29,35,39,0.4)) !important;
+            }
+            
+            /* Make image overlay slightly darker for better contrast */
+            .gallery-item [style*="background: rgba(29,35,39,0.2)"] {
+                background: rgba(29,35,39,0.4) !important;
+            }
         }
     </style>
 </head>
@@ -144,10 +167,11 @@
         </div>
     </section>
 
-    <!-- Gallery Filters -->
+    <!-- Gallery Filter Section -->
     <section style="background-color: #f8f5f1; padding: 40px 0; position: relative;">
-        <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px;">
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px; text-align: center;">
+            <!-- Filter buttons -->
+            <div style="margin-bottom: 40px;">
                 <button class="filter-btn active" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #a8834c; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="all">All Works</button>
                 
                 <button class="filter-btn" style="background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #1d2327; padding: 10px 20px; cursor: pointer; position: relative;" data-filter="paintings">Paintings</button>
@@ -581,6 +605,147 @@
                     bars[2].style.transform = '';
                 }
             });
+        });
+    </script>
+
+    <!-- Handle filter buttons in dark mode -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const isMobile = window.innerWidth <= 767;
+            
+            // Update filter button colors based on device size
+            function updateFilterButtonColors() {
+                if (window.innerWidth <= 767) {
+                    // Dark theme for mobile
+                    filterButtons.forEach(button => {
+                        if (!button.classList.contains('active')) {
+                            button.style.color = '#e9e4da';
+                        } else {
+                            button.style.color = '#a8834c';
+                        }
+                    });
+                } else {
+                    // Desktop theme
+                    filterButtons.forEach(button => {
+                        if (!button.classList.contains('active')) {
+                            button.style.color = '#1d2327';
+                        } else {
+                            button.style.color = '#a8834c';
+                        }
+                    });
+                }
+            }
+            
+            // Initial setup
+            updateFilterButtonColors();
+            
+            // Handle window resize
+            window.addEventListener('resize', updateFilterButtonColors);
+            
+            // Override hover behavior for mobile dark theme
+            filterButtons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.color = '#a8834c';
+                    }
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        if (window.innerWidth <= 767) {
+                            this.style.color = '#e9e4da';
+                        } else {
+                            this.style.color = '#1d2327';
+                        }
+                    }
+                });
+                
+                button.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (window.innerWidth <= 767) {
+                            btn.style.color = '#e9e4da';
+                        } else {
+                            btn.style.color = '#1d2327';
+                        }
+                    });
+                    
+                    this.style.color = '#a8834c';
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Filter gallery items
+                    const galleryItems = document.querySelectorAll('.gallery-item');
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    
+    <!-- Dark theme checker script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're on mobile
+            const isMobile = window.innerWidth <= 767;
+            
+            if (isMobile) {
+                // Force dark theme on all sections
+                document.querySelectorAll('section').forEach(function(section) {
+                    // Skip sections that are already dark
+                    if (section.getAttribute('style') && 
+                        !section.getAttribute('style').includes('background-color: #1d2327') && 
+                        !section.getAttribute('style').includes('background: #1d2327')) {
+                        
+                        // Add dark background
+                        section.style.backgroundColor = '#1d2327';
+                        
+                        // Make text light colored
+                        section.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function(heading) {
+                            if (!heading.getAttribute('style') || 
+                                !heading.getAttribute('style').includes('color: #a8834c')) {
+                                heading.style.color = '#ffffff';
+                            }
+                        });
+                        
+                        // Fix paragraph text
+                        section.querySelectorAll('p').forEach(function(paragraph) {
+                            if (!paragraph.getAttribute('style') || 
+                                !paragraph.getAttribute('style').includes('color: #a8834c')) {
+                                paragraph.style.color = '#e9e4da';
+                            }
+                        });
+                    }
+                });
+                
+                // Add dark background to the filter section
+                const filterSection = document.querySelector('section[style*="background-color: #f8f5f1"]');
+                if (filterSection) {
+                    filterSection.style.backgroundColor = '#1d2327';
+                }
+                
+                // Add dark background to the gallery section
+                const gallerySection = document.querySelector('section[style*="background-color: #ffffff"]');
+                if (gallerySection) {
+                    gallerySection.style.backgroundColor = '#1d2327';
+                }
+                
+                // Apply dark theme to filter buttons
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                filterButtons.forEach(function(button) {
+                    if (!button.classList.contains('active')) {
+                        button.style.color = '#e9e4da';
+                    }
+                });
+            }
         });
     </script>
 </body>

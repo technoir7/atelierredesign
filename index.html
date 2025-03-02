@@ -899,5 +899,137 @@
             });
         });
     </script>
+    
+    <!-- Dark theme styles for mobile -->
+    <style>
+        @media only screen and (max-width: 767px) {
+            /* Ensure all content areas have dark background */
+            section[style*="background-color: #f8f5f1"],
+            section[style*="background-color: #fff"],
+            section[style*="background-color: #ffffff"] {
+                background-color: #1d2327 !important;
+            }
+            
+            /* Make text light on dark backgrounds */
+            section[style*="background-color: #f8f5f1"] h1,
+            section[style*="background-color: #f8f5f1"] h2,
+            section[style*="background-color: #f8f5f1"] h3,
+            section[style*="background-color: #fff"] h1,
+            section[style*="background-color: #fff"] h2,
+            section[style*="background-color: #fff"] h3,
+            section[style*="background-color: #ffffff"] h1,
+            section[style*="background-color: #ffffff"] h2,
+            section[style*="background-color: #ffffff"] h3 {
+                color: #ffffff !important;
+            }
+            
+            /* Adjust paragraphs for dark mode */
+            section[style*="background-color: #f8f5f1"] p,
+            section[style*="background-color: #fff"] p,
+            section[style*="background-color: #ffffff"] p {
+                color: #e9e4da !important;
+            }
+            
+            /* Fix grid backgrounds */
+            [style*="background: white"] {
+                background: #212830 !important;
+            }
+            
+            /* Fix class and program cards */
+            [style*="background: white"] p {
+                color: #e9e4da !important;
+            }
+            
+            /* Make all card backgrounds dark */
+            div[style*="padding: 40px; background: white"] {
+                background: #212830 !important;
+            }
+            
+            /* Fix card text colors */
+            div[style*="padding: 40px; background: white"] p {
+                color: #e9e4da !important;
+            }
+            
+            /* Fix the split background section */
+            #about {
+                background: #1d2327 !important;
+            }
+            
+            /* Fix the calendar cards */
+            .calendar-card {
+                background-color: #212830 !important;
+                color: #e9e4da !important;
+            }
+            
+            /* Make sure links are visible */
+            a[style*="color: #1d2327"] {
+                color: #a8834c !important;
+            }
+        }
+    </style>
+    
+    <!-- Dark theme checker script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're on mobile
+            const isMobile = window.innerWidth <= 767;
+            
+            if (isMobile) {
+                // Force dark theme on all sections
+                document.querySelectorAll('section').forEach(function(section) {
+                    // Skip sections that are already dark
+                    if (section.getAttribute('style') && 
+                        !section.getAttribute('style').includes('background-color: #1d2327') && 
+                        !section.getAttribute('style').includes('background: #1d2327')) {
+                        
+                        // Add dark background
+                        section.style.backgroundColor = '#1d2327';
+                        
+                        // Make text light colored
+                        section.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function(heading) {
+                            if (!heading.getAttribute('style') || 
+                                !heading.getAttribute('style').includes('color: #a8834c')) {
+                                heading.style.color = '#ffffff';
+                            }
+                        });
+                        
+                        // Fix paragraph text
+                        section.querySelectorAll('p').forEach(function(paragraph) {
+                            if (!paragraph.getAttribute('style') || 
+                                !paragraph.getAttribute('style').includes('color: #a8834c')) {
+                                paragraph.style.color = '#e9e4da';
+                            }
+                        });
+                    }
+                });
+                
+                // Fix card backgrounds
+                document.querySelectorAll('div[style*="background: white"]').forEach(function(card) {
+                    card.style.background = '#212830';
+                    
+                    // Fix text in cards
+                    card.querySelectorAll('h3').forEach(function(heading) {
+                        heading.style.color = '#ffffff';
+                    });
+                    
+                    card.querySelectorAll('p').forEach(function(paragraph) {
+                        if (!paragraph.getAttribute('style') || 
+                            !paragraph.getAttribute('style').includes('color: #a8834c')) {
+                            paragraph.style.color = '#e9e4da';
+                        }
+                    });
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                // Reload the page on major size changes
+                if ((window.innerWidth <= 767 && !isMobile) || 
+                    (window.innerWidth > 767 && isMobile)) {
+                    location.reload();
+                }
+            });
+        });
+    </script>
 </body>
 </html> 

@@ -1909,4 +1909,84 @@ textarea.form-control {
         max-width: 650px;
         margin: 0 auto;
     }
+}
+
+/* Make all sections dark-themed on mobile */
+@media only screen and (max-width: 767px) {
+    /* Change all light backgrounds to dark */
+    section[style*="background-color: #f8f5f1"],
+    section[style*="background-color: #fff"],
+    section[style*="background-color: #ffffff"] {
+        background-color: #1d2327 !important;
+    }
+    
+    /* Dark text on light backgrounds should become light text on dark backgrounds */
+    section[style*="background-color: #f8f5f1"] h1,
+    section[style*="background-color: #f8f5f1"] h2,
+    section[style*="background-color: #f8f5f1"] h3,
+    section[style*="background-color: #fff"] h1,
+    section[style*="background-color: #fff"] h2,
+    section[style*="background-color: #fff"] h3,
+    section[style*="background-color: #ffffff"] h1,
+    section[style*="background-color: #ffffff"] h2,
+    section[style*="background-color: #ffffff"] h3 {
+        color: #ffffff !important;
+    }
+    
+    /* Also change text to light for better contrast */
+    section[style*="background-color: #f8f5f1"] p,
+    section[style*="background-color: #fff"] p,
+    section[style*="background-color: #ffffff"] p {
+        color: #e9e4da !important;
+    }
+    
+    /* Fix card styles for dark mode */
+    div[style*="padding: 40px; background: white"],
+    div[style*="background: white"],
+    div[style*="background-color: white"] {
+        background: #212830 !important;
+    }
+    
+    div[style*="background: white"] h3 {
+        color: #ffffff !important;
+    }
+    
+    div[style*="background: white"] p:not([style*="color: #a8834c"]) {
+        color: #e9e4da !important;
+    }
+    
+    /* Ensure form elements are visible */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        background-color: #2a3440 !important;
+        color: #ffffff !important;
+        border-color: #3a4450 !important;
+    }
+    
+    /* Fix form labels */
+    label[style*="color: #1d2327"] {
+        color: #e9e4da !important;
+    }
+    
+    /* Ensure filter buttons are visible on dark background */
+    .filter-btn {
+        color: #e9e4da !important;
+    }
+    
+    .filter-btn.active {
+        color: #a8834c !important;
+    }
+    
+    /* Fix the split background in the about section */
+    #about[style*="background: linear-gradient"] {
+        background: #1d2327 !important;
+    }
+    
+    /* Gallery specific dark theme fixes */
+    .gallery-grid {
+        background-color: #1d2327 !important;
+    }
 } 
