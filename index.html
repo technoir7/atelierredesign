@@ -23,34 +23,46 @@
         }
         
         .program-card:nth-child(2) .program-image {
-            background-image: url('images/lifedrawing.jpg') !important;
+            background-image: url('images/CharlieAntolin_SampleAnatomyNotes1.jpg') !important;
         }
         
         .program-card:nth-child(3) .program-image {
-            background-image: url('images/class2.jpg') !important;
+            background-image: url('images/CharlesAntolin_Van_2.jpeg') !important;
         }
         
         .program-card:nth-child(4) .program-image {
             background-image: url('images/maskdrawing.jpg') !important;
         }
         
-        /* Animations for decorative elements */
+        /* Updated Animations for vibrant decorative elements */
         @keyframes floatUp {
             0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
             100% { transform: translateY(0); }
         }
         
         @keyframes fadeInOut {
             0% { opacity: 0.3; }
-            50% { opacity: 0.7; }
+            50% { opacity: 0.8; }
             100% { opacity: 0.3; }
         }
         
         @keyframes glowPulse {
-            0% { box-shadow: 0 0 10px 0 rgba(168,131,76,0.3); }
-            50% { box-shadow: 0 0 25px 2px rgba(168,131,76,0.5); }
-            100% { box-shadow: 0 0 10px 0 rgba(168,131,76,0.3); }
+            0% { box-shadow: 0 0 10px 0 rgba(168,131,76,0.2); }
+            50% { box-shadow: 0 0 30px 3px rgba(168,131,76,0.5); }
+            100% { box-shadow: 0 0 10px 0 rgba(168,131,76,0.2); }
+        }
+        
+        @keyframes colorShift {
+            0% { color: #a8834c; }
+            50% { color: #d4a456; }
+            100% { color: #a8834c; }
+        }
+        
+        @keyframes borderPulse {
+            0% { border-color: rgba(168,131,76,0.6); }
+            50% { border-color: rgba(168,131,76,1); }
+            100% { border-color: rgba(168,131,76,0.6); }
         }
         
         /* Apply animations to specific elements */
@@ -68,6 +80,26 @@
         
         .accent-glow {
             animation: glowPulse 5s infinite ease-in-out;
+        }
+        
+        /* Add these classes to make elements pop */
+        .color-shift {
+            animation: colorShift 6s infinite ease-in-out;
+        }
+        
+        .border-pulse {
+            animation: borderPulse 4s infinite ease-in-out;
+        }
+        
+        /* Navigation and Button enhancements */
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(168,131,76,0.3) !important;
+        }
+        
+        /* Make all gold accent colors more vibrant */
+        .gold-accent {
+            color: #d4a456 !important;
         }
     </style>
 </head>
@@ -96,7 +128,7 @@
     <main>
         <div style="width: 100%; height: 100vh; min-height: 700px; position: relative; overflow: hidden;">
             <!-- Main background image -->
-            <img src="images/IMG_1814.jpg" alt="David Hardy" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.1) saturate(1.2);">
+            <img src="images/IMG_1814.jpg" alt="Aaron's portrait from Monday night figure drawing session" style="position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(1.1) saturate(1.2);">
             
             <!-- Artistic overlay with gradient and texture -->
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 100%); mix-blend-mode: multiply;"></div>
@@ -105,7 +137,7 @@
             <div class="accent-line" style="position: absolute; top: 0; left: 5%; width: 3px; height: 80%; background: linear-gradient(to bottom, rgba(168,131,76,0), rgba(168,131,76,1) 20%, rgba(168,131,76,1) 80%, rgba(168,131,76,0));"></div>
             
             <!-- Floating art element -->
-            <div class="floating-art" style="position: absolute; top: 15%; right: 10%; width: 150px; height: 150px; background-image: url('images/david-hardy1.jpg'); background-size: cover; background-position: center; border: 5px solid white; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transform: rotate(5deg);"></div>
+            <!-- <div class="floating-art" style="position: absolute; top: 15%; right: 10%; width: 150px; height: 150px; background-image: url('images/david-hardy1.jpg'); background-size: cover; background-position: center; border: 5px solid white; box-shadow: 0 15px 35px rgba(0,0,0,0.4); transform: rotate(5deg);"></div> -->
             
             <!-- Content container with dynamic layout -->
             <div style="position: relative; z-index: 5; width: 100%; height: 100%; display: flex; align-items: center;">
@@ -265,7 +297,7 @@
                     <!-- Class card 1 -->
                     <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="images/class1.jpg" alt="Old Master Drawing & Painting" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="images/art/dh16-lrg.jpg" alt="Old Master Drawing & Painting" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                         </div>
                         
                         <div style="position: absolute; top: 20px; left: 0; background: #1d2327; color: white; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
@@ -286,19 +318,19 @@
                     <!-- Class card 2 -->
                     <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="images/lifedrawing.jpg" alt="Artistic Anatomy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="images/art/dh03.jpg" alt="Life Drawing" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                         </div>
                         
                         <div style="position: absolute; top: 20px; left: 0; background: #1d2327; color: white; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
-                            $200.00/monthly
+                            $35.00/session
                         </div>
                         
                         <div style="padding: 40px; background: white;">
-                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: #1d2327;">Artistic Anatomy</h3>
+                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: #1d2327;">Long Pose Figure Drawing Workshop</h3>
                             
-                            <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Saturday<br>2:00 PM to 5:00 PM</p>
+                            <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Monday<br>6:30 PM to 9:30 PM</p>
                             
-                            <p style="font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 30px;">The goal of this class is to be able to compose effective and expressive figures in art. This skill will be developed and improved through the study of anatomy, which helps us capture the essence of form through an understanding of how the parts of the body function.</p>
+                            <p style="font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 30px;">This is a time for independent study and development of individual initiative. The model takes one pose for the session. These are repeated for about two months and, when desired by a majority of those participating, even longer.</p>
                             
                             <a href="#contact" style="display: inline-block; background: #1d2327; color: white; padding: 15px 30px; text-decoration: none; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; transition: all 0.3s ease; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">Register for This Class</a>
                         </div>
@@ -307,7 +339,7 @@
                     <!-- Class card 3 -->
                     <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="images/class2.jpg" alt="Introduction to Figure Sculpture" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="images/art/dh17.jpg" alt="Studio Work" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                         </div>
                         
                         <div style="position: absolute; top: 20px; left: 0; background: #1d2327; color: white; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
@@ -328,17 +360,38 @@
                     <!-- Class card 4 -->
                     <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <div style="height: 300px; overflow: hidden;">
-                            <img src="images/maskdrawing.jpg" alt="Long Pose Figure Drawing Workshop" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="images/art/dh16.jpg" alt="Old Master Drawing & Painting class" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         
                         <div style="position: absolute; top: 20px; left: 0; background: #1d2327; color: white; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
-                            $25.00/session
+                            $200.00/monthly
                         </div>
                         
                         <div style="padding: 40px; background: white;">
-                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: #1d2327;">Long Pose Figure Drawing Workshop</h3>
+                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: #1d2327;">Artistic Anatomy</h3>
                             
-                            <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Monday<br>6:30 PM to 9:30 PM</p>
+                            <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Saturday<br>2:00 PM to 5:00 PM</p>
+                            
+                            <p style="font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 30px;">The goal of this class is to be able to compose effective and expressive figures in art. This skill will be developed and improved through the study of anatomy, which helps us capture the essence of form through an understanding of how the parts of the body function.</p>
+                            
+                            <a href="#contact" style="display: inline-block; background: #1d2327; color: white; padding: 15px 30px; text-decoration: none; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; transition: all 0.3s ease; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">Register for This Class</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Class card 5 -->
+                    <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                        <div style="height: 300px; overflow: hidden;">
+                            <img src="images/art/dh26.jpg" alt="Long Pose Figure Drawing Workshop" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        
+                        <div style="position: absolute; top: 20px; left: 0; background: #1d2327; color: white; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">
+                            $35.00/session
+                        </div>
+                        
+                        <div style="padding: 40px; background: white;">
+                            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 15px; color: #1d2327;">Long Pose Figure Drawing</h3>
+                            
+                            <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Monday<br>6:30-9:30pm</p>
                             
                             <p style="font-size: 1rem; line-height: 1.8; color: #444; margin-bottom: 30px;">This is a time for independent study and development of individual initiative. The model takes one pose for the session. These are repeated for about two months and, when desired by a majority of those participating, even longer.</p>
                             
@@ -389,7 +442,7 @@
                     
                     <!-- Gallery item 2 -->
                     <div style="grid-column: span 3; grid-row: span 1; position: relative; height: 350px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
-                        <img src="images/class1.jpg" alt="Student Artwork" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
+                        <img src="images/art/dh16-lrg.jpg" alt="Student Artwork" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                         
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
                         
@@ -401,7 +454,7 @@
                     
                     <!-- Gallery item 3 -->
                     <div style="grid-column: span 3; grid-row: span 1; position: relative; height: 350px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
-                        <img src="images/lifedrawing.jpg" alt="Life Drawing" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
+                        <img src="images/art/dh03.jpg" alt="Life Drawing" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                         
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
                         
@@ -413,7 +466,7 @@
                     
                     <!-- Gallery item 4 -->
                     <div style="grid-column: span 3; grid-row: span 1; position: relative; height: 350px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
-                        <img src="images/class2.jpg" alt="Studio Work" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
+                        <img src="images/art/dh17.jpg" alt="Studio Work" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                         
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
                         
@@ -425,7 +478,7 @@
                     
                     <!-- Gallery item 5 -->
                     <div style="grid-column: span 3; grid-row: span 1; position: relative; height: 350px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.3);">
-                        <img src="images/maskdrawing.jpg" alt="Mask Drawing" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
+                        <img src="images/art/dh16.jpg" alt="Old Master Drawing & Painting class" style="width: 100%; height: 100%; object-fit: cover;">
                         
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(29,35,39,0.2); opacity: 0; transition: all 0.5s ease;"></div>
                         
@@ -443,19 +496,19 @@
             </div>
         </section>
 
-        <section id="testimonials" style="padding: 120px 0; background-color: #1d2327; position: relative; overflow: hidden;">
+        <section id="testimonials" style="padding: 120px 0; background-color: #f8f5f1; position: relative; overflow: hidden;">
             <!-- Decorative elements -->
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Ccircle cx=%222%22 cy=%222%22 r=%220.5%22 fill=%22%23a8834c%22 opacity=%220.1%22/%3E%3C/svg%3E'); opacity: 0.5;"></div>
             
             <!-- Golden accent line -->
-            <div style="position: absolute; top: 0; left: 15%; width: 1px; height: 180px; background: linear-gradient(to bottom, rgba(168,131,76,1), rgba(168,131,76,0));"></div>
+            <div class="accent-line" style="position: absolute; top: 0; left: 15%; width: 1px; height: 180px; background: linear-gradient(to bottom, rgba(168,131,76,1), rgba(168,131,76,0));"></div>
             
             <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px; position: relative; z-index: 2;">
                 <!-- Section header -->
                 <div style="text-align: center; margin-bottom: 80px;">
-                    <span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #a8834c; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">What Our Students Say</span>
+                    <span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #a8834c; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;" class="color-shift">What Our Students Say</span>
                     
-                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #ffffff; margin-bottom: 20px; font-weight: 300;">Testimonials</h2>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #1d2327; margin-bottom: 20px; font-weight: 300;" class="gold-accent">Testimonials</h2>
                     
                     <div style="width: 60px; height: 2px; background-color: #a8834c; margin: 0 auto;"></div>
                 </div>
@@ -463,22 +516,22 @@
                 <!-- Testimonial cards -->
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
                     <!-- Testimonial 1 -->
-                    <div class="testimonial-card accent-glow" style="background: rgba(255,255,255,0.05); padding: 50px; position: relative; border-left: 3px solid #a8834c; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                    <div class="testimonial-card accent-glow" style="background: white; padding: 50px; position: relative; border-left: 3px solid #a8834c; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <div style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 8rem; line-height: 0; color: rgba(168,131,76,0.2);">"</div>
                         
                         <blockquote style="position: relative; z-index: 2;">
-                            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; line-height: 1.8; color: #e9e4da; margin-bottom: 30px;">"The personalized instruction at the Atelier School transformed my understanding of art. The structured approach to learning classical techniques provided me with a foundation I couldn't have gained elsewhere."</p>
+                            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; line-height: 1.8; color: #333; margin-bottom: 30px;">"The personalized instruction at the Atelier School transformed my understanding of art. The structured approach to learning classical techniques provided me with a foundation I couldn't have gained elsewhere."</p>
                             
                             <cite style="font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 0.9rem; color: #a8834c; text-transform: uppercase; letter-spacing: 2px; display: block;">— Former Student</cite>
                         </blockquote>
                     </div>
                     
                     <!-- Testimonial 2 -->
-                    <div class="testimonial-card accent-glow" style="background: rgba(255,255,255,0.05); padding: 50px; position: relative; border-left: 3px solid #a8834c; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                    <div class="testimonial-card accent-glow" style="background: white; padding: 50px; position: relative; border-left: 3px solid #a8834c; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                         <div style="position: absolute; top: 20px; right: 20px; font-family: 'Cormorant Garamond', serif; font-size: 8rem; line-height: 0; color: rgba(168,131,76,0.2);">"</div>
                         
                         <blockquote style="position: relative; z-index: 2;">
-                            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; line-height: 1.8; color: #e9e4da; margin-bottom: 30px;">"Small class sizes and dedicated instructors make this Atelier unique. The faculty truly care about preserving this valuable tradition while helping each student find their own voice."</p>
+                            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; line-height: 1.8; color: #333; margin-bottom: 30px;">"Small class sizes and dedicated instructors make this Atelier unique. The faculty truly care about preserving this valuable tradition while helping each student find their own voice."</p>
                             
                             <cite style="font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 0.9rem; color: #a8834c; text-transform: uppercase; letter-spacing: 2px; display: block;">— Continuing Student</cite>
                         </blockquote>
@@ -487,105 +540,105 @@
             </div>
         </section>
 
-        <section id="calendar" style="padding: 120px 0; background-color: #1d2327; position: relative; overflow: hidden;">
+        <section id="calendar" style="padding: 120px 0; background-color: #f8f5f1; position: relative; overflow: hidden;">
             <!-- Decorative elements -->
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Crect width=%221%22 height=%221%22 fill=%22%23a8834c%22 opacity=%220.03%22/%3E%3C/svg%3E'); opacity: 0.5;"></div>
             
             <!-- Golden accent line -->
-            <div style="position: absolute; bottom: 0; right: 15%; width: 1px; height: 180px; background: linear-gradient(to top, rgba(168,131,76,1), rgba(168,131,76,0));"></div>
+            <div class="accent-line" style="position: absolute; bottom: 0; right: 15%; width: 1px; height: 180px; background: linear-gradient(to top, rgba(168,131,76,1), rgba(168,131,76,0));"></div>
             
             <div style="max-width: 1400px; margin: 0 auto; padding: 0 30px; position: relative; z-index: 2;">
                 <!-- Section header -->
                 <div style="text-align: center; margin-bottom: 80px;">
                     <span style="display: block; font-family: 'Montserrat', sans-serif; font-size: 1rem; color: #a8834c; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px;">Plan Your Schedule</span>
                     
-                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #ffffff; margin-bottom: 20px; font-weight: 300;">Class Calendar</h2>
+                    <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: #1d2327; margin-bottom: 20px; font-weight: 300;">Class Calendar</h2>
                     
-                    <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #e9e4da; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; font-weight: 300; line-height: 1.8;">Upcoming classes and registration information to plan your artistic journey</p>
+                    <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; color: #555; margin-bottom: 30px; font-family: 'Montserrat', sans-serif; font-weight: 300; line-height: 1.8;">Upcoming classes and registration information to plan your artistic journey</p>
                     
                     <div style="width: 60px; height: 2px; background-color: #a8834c; margin: 0 auto;"></div>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
                     <!-- Calendar information -->
-                    <div style="color: #e9e4da;">
+                    <div style="color: #333;">
                         <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Classes at the Atelier School are offered in various schedules to accommodate different needs. Whether you're looking for intensive study or evening sessions, we have options to help you advance your artistic skills.</p>
                         
                         <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">Our calendar is regularly updated with new classes, workshops, and events. Please check back frequently or contact us to be added to our mailing list.</p>
                         
-                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin: 40px 0 25px; position: relative; display: inline-block; color: #ffffff;">
+                        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin: 40px 0 25px; position: relative; display: inline-block; color: #1d2327;">
                             Registration Process
                             <span style="position: absolute; bottom: -10px; left: 0; width: 80px; height: 2px; background-color: #a8834c;"></span>
                         </h3>
                         
                         <ol style="margin-bottom: 40px; padding-left: 25px;">
-                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #e9e4da;">Review the class calendar and select your desired courses</li>
-                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #e9e4da;">Contact the appropriate instructor to confirm availability</li>
-                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #e9e4da;">Schedule a portfolio review (if required)</li>
-                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #e9e4da;">Complete registration and payment</li>
-                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #e9e4da;">Receive your materials list and preparation instructions</li>
+                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #333;">Review the class calendar and select your desired courses</li>
+                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #333;">Contact the appropriate instructor to confirm availability</li>
+                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #333;">Schedule a portfolio review (if required)</li>
+                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #333;">Complete registration and payment</li>
+                            <li style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; color: #333;">Receive your materials list and preparation instructions</li>
                         </ol>
                         
-                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; font-style: italic;">Early registration is recommended as classes fill quickly due to our commitment to small class sizes.</p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; font-style: italic; color: #555;">Early registration is recommended as classes fill quickly due to our commitment to small class sizes.</p>
                         
-                        <a href="#contact" style="display: inline-block; background: #a8834c; color: white; padding: 15px 40px; text-decoration: none; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; transition: all 0.3s ease; border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Register for Classes</a>
+                        <a href="#contact" style="display: inline-block; background: #a8834c; color: white; padding: 15px 40px; text-decoration: none; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; transition: all 0.3s ease; border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-radius: 3px;">Register for Classes</a>
                     </div>
                     
                     <!-- Calendar cards -->
                     <div style="display: flex; flex-direction: column; gap: 30px;">
                         <!-- Class 1 -->
-                        <div class="calendar-card" style="background: rgba(255,255,255,0.05); display: flex; border-radius: 3px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                        <div class="calendar-card" style="background: white; display: flex; border-radius: 3px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                             <div style="background: #a8834c; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 100px;">
                                 <span style="font-family: 'Montserrat', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Ongoing</span>
                             </div>
                             
                             <div style="padding: 25px; display: flex; align-items: center; flex: 1;">
-                                <div style="width: 80px; height: 80px; overflow: hidden; margin-right: 20px; border: 2px solid rgba(168,131,76,0.3);">
-                                    <img src="images/class1.jpg" alt="Old Master Drawing & Painting class" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="width: 80px; height: 80px; overflow: hidden; margin-right: 20px; border: 2px solid rgba(168,131,76,0.3);" class="border-pulse">
+                                    <img src="images/art/dh16-lrg.jpg" alt="Old Master Drawing & Painting class" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                                 </div>
                                 
                                 <div>
-                                    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 5px; color: #ffffff;">Old Master Drawing & Painting</h4>
-                                    <p style="color: #e9e4da; margin-bottom: 5px; font-size: 0.95rem;">Tues, Wed, Thurs: 2-5pm or 6:30-9:30pm</p>
-                                    <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Instructor: David Hardy, Founder and Director</p>
+                                    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 5px; color: #1d2327;">Old Master Drawing & Painting</h4>
+                                    <p style="color: #555; margin-bottom: 5px; font-size: 0.95rem;">Tues, Wed, Thurs: 2-5pm or 6:30-9:30pm</p>
+                                    <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;" class="color-shift">Instructor: David Hardy, Founder and Director</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Class 2 -->
-                        <div class="calendar-card" style="background: rgba(255,255,255,0.05); display: flex; border-radius: 3px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                        <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                             <div style="background: #a8834c; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 100px;">
                                 <span style="font-family: 'Montserrat', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Ongoing</span>
                             </div>
                             
                             <div style="padding: 25px; display: flex; align-items: center; flex: 1;">
-                                <div style="width: 80px; height: 80px; overflow: hidden; margin-right: 20px; border: 2px solid rgba(168,131,76,0.3);">
-                                    <img src="images/CharlieAntolin_SampleAnatomyNotes1.jpg" alt="Artistic Anatomy class" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="width: 80px; height: 80px; overflow: hidden; margin-right: 20px; border: 2px solid rgba(168,131,76,0.3);" class="border-pulse">
+                                    <img src="images/art/dh03.jpg" alt="Life Drawing" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                                 </div>
                                 
                                 <div>
-                                    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 5px; color: #ffffff;">Artistic Anatomy</h4>
-                                    <p style="color: #e9e4da; margin-bottom: 5px; font-size: 0.95rem;">Saturdays: 2-5pm</p>
-                                    <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Instructor: Charlie Antolin</p>
+                                    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 5px; color: #1d2327;">Long Pose Figure Drawing</h4>
+                                    <p style="color: #555; margin-bottom: 5px; font-size: 0.95rem;">Mondays: 6:30-9:30pm</p>
+                                    <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;" class="color-shift">Open Workshop</p>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Class 3 -->
-                        <div class="calendar-card" style="background: rgba(255,255,255,0.05); display: flex; border-radius: 3px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                        <div style="position: relative; overflow: hidden; border-radius: 3px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); transition: all 0.3s ease;">
                             <div style="background: #a8834c; color: white; padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; min-width: 100px;">
                                 <span style="font-family: 'Montserrat', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Ongoing</span>
                             </div>
                             
                             <div style="padding: 25px; display: flex; align-items: center; flex: 1;">
-                                <div style="width: 80px; height: 80px; overflow: hidden; margin-right: 20px; border: 2px solid rgba(168,131,76,0.3);">
-                                    <img src="images/lifedrawing.jpg" alt="Long Pose Figure Drawing Workshop" style="width: 100%; height: 100%; object-fit: cover;">
+                                <div style="width: 80px; height: 80px; overflow: hidden; margin-right: 20px; border: 2px solid rgba(168,131,76,0.3);" class="border-pulse">
+                                    <img src="images/art/dh17.jpg" alt="Studio Work" style="width: 100%; height: 100%; object-fit: cover; transition: all 0.5s ease;">
                                 </div>
                                 
                                 <div>
-                                    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 5px; color: #ffffff;">Long Pose Figure Drawing</h4>
-                                    <p style="color: #e9e4da; margin-bottom: 5px; font-size: 0.95rem;">Mondays: 6:30-9:30pm</p>
-                                    <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Open Workshop</p>
+                                    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 5px; color: #1d2327;">Introduction to Figure Sculpture</h4>
+                                    <p style="color: #555; margin-bottom: 5px; font-size: 0.95rem;">Schedule to be determined</p>
+                                    <p style="color: #a8834c; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;" class="color-shift">Instructor: Charlie Antolin</p>
                                 </div>
                             </div>
                         </div>
@@ -904,15 +957,41 @@
         
         testimonialCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px)';
-                this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.3)';
-                this.style.background = 'rgba(255,255,255,0.08)';
+                this.style.transform = 'translateY(-15px)';
+                this.style.boxShadow = '0 25px 50px rgba(168,131,76,0.2)';
+                this.style.background = 'white';
+                this.style.borderLeft = '5px solid #a8834c';
+                
+                // Get the quote text inside
+                const quoteText = this.querySelector('p');
+                if (quoteText) {
+                    quoteText.style.color = '#1d2327';
+                }
+                
+                // Get the quotation mark
+                const quoteMark = this.querySelector('div[style*="color: rgba(168,131,76,0.2)"]');
+                if (quoteMark) {
+                    quoteMark.style.color = 'rgba(168,131,76,0.3)';
+                }
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.2)';
-                this.style.background = 'rgba(255,255,255,0.05)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+                this.style.background = 'white';
+                this.style.borderLeft = '3px solid #a8834c';
+                
+                // Get the quote text inside
+                const quoteText = this.querySelector('p');
+                if (quoteText) {
+                    quoteText.style.color = '#333';
+                }
+                
+                // Get the quotation mark
+                const quoteMark = this.querySelector('div[style*="color: rgba(168,131,76,"]');
+                if (quoteMark) {
+                    quoteMark.style.color = 'rgba(168,131,76,0.2)';
+                }
             });
         });
         
@@ -921,26 +1000,54 @@
         
         calendarCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.3)';
-                this.style.background = 'rgba(255,255,255,0.08)';
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(168,131,76,0.2)';
+                this.style.background = 'white';
+                this.style.borderTop = '3px solid #a8834c';
+                this.style.borderBottom = '3px solid #a8834c';
                 
                 // Get the image element within this card
                 const image = this.querySelector('div:nth-child(2) > div:nth-child(1) > img');
                 if (image) {
-                    image.style.transform = 'scale(1.1)';
+                    image.style.transform = 'scale(1.15)';
+                }
+                
+                // Make the title and date pop
+                const title = this.querySelector('h4');
+                if (title) {
+                    title.style.color = '#a8834c';
+                }
+                
+                // Gold section
+                const goldSection = this.querySelector('div:first-child');
+                if (goldSection) {
+                    goldSection.style.background = '#8a6b3d';
                 }
             });
             
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.2)';
-                this.style.background = 'rgba(255,255,255,0.05)';
+                this.style.boxShadow = '0 15px 35px rgba(0,0,0,0.1)';
+                this.style.background = 'white';
+                this.style.borderTop = '0';
+                this.style.borderBottom = '0';
                 
                 // Get the image element within this card
                 const image = this.querySelector('div:nth-child(2) > div:nth-child(1) > img');
                 if (image) {
                     image.style.transform = 'scale(1)';
+                }
+                
+                // Reset the title color
+                const title = this.querySelector('h4');
+                if (title) {
+                    title.style.color = '#1d2327';
+                }
+                
+                // Gold section
+                const goldSection = this.querySelector('div:first-child');
+                if (goldSection) {
+                    goldSection.style.background = '#a8834c';
                 }
             });
         });
