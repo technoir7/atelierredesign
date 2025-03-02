@@ -22,11 +22,21 @@ document.addEventListener('DOMContentLoaded', function() {
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.menu');
+    const menuLinks = document.querySelectorAll('.menu a');
     
     if (menuToggle && menu) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
             this.classList.toggle('active');
             menu.classList.toggle('active');
+            
+            // Prevent body scrolling when menu is open
+            if (menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
         
         // Close menu when clicking outside
@@ -34,8 +44,23 @@ function initMobileMenu() {
             if (!menu.contains(event.target) && !menuToggle.contains(event.target) && menu.classList.contains('active')) {
                 menuToggle.classList.remove('active');
                 menu.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
+        
+        // Close menu when link is clicked
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Handle touch events properly on iOS
+        menu.addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+        }, { passive: true });
     }
 }
 
