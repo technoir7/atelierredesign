@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
     <title>Gallery | Atelier School of Classical Realism</title>
     <meta name="description" content="Explore the exceptional artwork by students and faculty of the Atelier School of Classical Realism, showcasing traditional drawing and painting techniques.">
     <link rel="stylesheet" href="css/normalize.css">
@@ -10,6 +10,76 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Ensure mobile styles override inline styles on iPhones */
+        @media only screen and (max-width: 767px) {
+            body {
+                width: 100% !important;
+                overflow-x: hidden !important;
+            }
+            
+            [style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            [style*="max-width"] {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                box-sizing: border-box !important;
+            }
+            
+            [style*="display: flex"] {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            
+            section {
+                overflow-x: hidden !important;
+            }
+            
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            [style*="font-size: 4rem"], 
+            [style*="font-size: 5rem"] {
+                font-size: 2.5rem !important;
+            }
+            
+            [style*="font-size: 3rem"], 
+            [style*="font-size: 2rem"] {
+                font-size: 1.8rem !important;
+            }
+            
+            [style*="padding: 40px"],
+            [style*="padding: 30px"] {
+                padding: 15px !important;
+            }
+            
+            /* Fix for gallery grid */
+            .gallery-grid {
+                display: grid !important;
+                grid-template-columns: 1fr !important;
+                grid-auto-rows: auto !important;
+                width: 100% !important;
+            }
+            
+            .gallery-item {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+                height: auto !important;
+                min-height: 250px !important;
+            }
+            
+            /* Hide desktop navigation on mobile */
+            header nav ul {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Premium Header (same as index.html for consistency) -->
@@ -21,6 +91,12 @@
                     <span style="font-family: 'Montserrat', sans-serif; font-size: 12px; color: #a8834c; text-transform: uppercase; letter-spacing: 3px;">of Classical Realism</span>
                 </a>
             </div>
+            <!-- Mobile menu button - only visible on mobile -->
+            <div class="mobile-menu-toggle" style="display: none; cursor: pointer; padding: 10px; z-index: 1001;">
+                <div style="width: 30px; height: 3px; background-color: #ffffff; margin: 6px 0; transition: 0.4s;"></div>
+                <div style="width: 30px; height: 3px; background-color: #ffffff; margin: 6px 0; transition: 0.4s;"></div>
+                <div style="width: 30px; height: 3px; background-color: #ffffff; margin: 6px 0; transition: 0.4s;"></div>
+            </div>
             <nav>
                 <ul style="display: flex; list-style: none; margin: 0; padding: 0; gap: 40px; align-items: center;">
                     <li><a href="index.html#about" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease;">About</a></li>
@@ -31,6 +107,18 @@
                     <li><a href="index.html#contact" style="display: inline-block; background-color: #a8834c; color: white; padding: 12px 25px; text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; border: none; font-family: 'Montserrat', sans-serif; font-size: 12px; transition: all 0.3s ease;">Contact</a></li>
                 </ul>
             </nav>
+        </div>
+        
+        <!-- Mobile slide-in menu - hidden by default -->
+        <div class="mobile-menu" style="position: fixed; top: 64px; left: 0; width: 100%; background-color: #1d2327; z-index: 1000; display: none; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.3);">
+            <ul style="list-style: none; margin: 0; padding: 0;">
+                <li style="margin-bottom: 15px;"><a href="index.html#about" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; display: block; padding: 10px 0;">About</a></li>
+                <li style="margin-bottom: 15px;"><a href="index.html#faculty" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; display: block; padding: 10px 0;">Faculty</a></li>
+                <li style="margin-bottom: 15px;"><a href="gallery.html" style="font-family: 'Montserrat', sans-serif; color: #a8834c; text-decoration: none; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; display: block; padding: 10px 0; border-left: 3px solid #a8834c; padding-left: 10px;">Gallery</a></li>
+                <li style="margin-bottom: 15px;"><a href="index.html#classes" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; display: block; padding: 10px 0;">Classes</a></li>
+                <li style="margin-bottom: 15px;"><a href="index.html#calendar" style="font-family: 'Montserrat', sans-serif; color: #ffffff; text-decoration: none; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; display: block; padding: 10px 0;">Calendar</a></li>
+                <li><a href="index.html#contact" style="display: inline-block; background-color: #a8834c; color: white; padding: 12px 25px; text-decoration: none; font-weight: 500; text-transform: uppercase; letter-spacing: 2px; border: none; font-family: 'Montserrat', sans-serif; font-size: 14px;">Contact</a></li>
+            </ul>
         </div>
     </header>
 
@@ -432,6 +520,66 @@
                         this.style.color = '#1d2327';
                     }
                 });
+            });
+        });
+    </script>
+    
+    <!-- Mobile menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+            
+            // Show mobile menu toggle on small screens
+            if (window.innerWidth <= 767) {
+                mobileMenuToggle.style.display = 'block';
+            }
+            
+            // Toggle mobile menu when button is clicked
+            mobileMenuToggle.addEventListener('click', function() {
+                if (mobileMenu.style.display === 'block') {
+                    mobileMenu.style.display = 'none';
+                    // Reset hamburger icon
+                    const bars = this.querySelectorAll('div');
+                    bars[0].style.transform = '';
+                    bars[1].style.opacity = '';
+                    bars[2].style.transform = '';
+                } else {
+                    mobileMenu.style.display = 'block';
+                    // Animate to X icon
+                    const bars = this.querySelectorAll('div');
+                    bars[0].style.transform = 'rotate(-45deg) translate(-6px, 6px)';
+                    bars[1].style.opacity = '0';
+                    bars[2].style.transform = 'rotate(45deg) translate(-6px, -6px)';
+                }
+            });
+            
+            // Close menu when a link is clicked
+            mobileMenuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    mobileMenu.style.display = 'none';
+                    // Reset hamburger icon
+                    const bars = mobileMenuToggle.querySelectorAll('div');
+                    bars[0].style.transform = '';
+                    bars[1].style.opacity = '';
+                    bars[2].style.transform = '';
+                });
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth <= 767) {
+                    mobileMenuToggle.style.display = 'block';
+                } else {
+                    mobileMenuToggle.style.display = 'none';
+                    mobileMenu.style.display = 'none';
+                    // Reset hamburger icon
+                    const bars = mobileMenuToggle.querySelectorAll('div');
+                    bars[0].style.transform = '';
+                    bars[1].style.opacity = '';
+                    bars[2].style.transform = '';
+                }
             });
         });
     </script>
