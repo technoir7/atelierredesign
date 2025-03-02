@@ -1955,6 +1955,26 @@ textarea.form-control {
         color: #e9e4da !important;
     }
     
+    /* Fix the About section split background */
+    #about {
+        background: #1d2327 !important; 
+        background-image: none !important;
+    }
+    
+    /* Fix right side of about section that would normally be light */
+    #about > div > div:nth-child(2) {
+        color: #ffffff !important;
+    }
+    
+    #about > div > div:nth-child(2) p {
+        color: #e9e4da !important;
+    }
+    
+    /* Fix image borders in about section */
+    #about div[style*="border: 5px solid white"] {
+        border-color: #a8834c !important;
+    }
+    
     /* Ensure form elements are visible */
     input[type="text"],
     input[type="email"],
@@ -1988,5 +2008,11 @@ textarea.form-control {
     /* Gallery specific dark theme fixes */
     .gallery-grid {
         background-color: #1d2327 !important;
+    }
+    
+    /* Ensure all grid layouts stack properly on mobile and have consistent background */
+    div[style*="grid-template-columns"] {
+        background-color: transparent !important;
+        grid-template-columns: 1fr !important;
     }
 } 
