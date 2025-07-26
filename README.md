@@ -90,4 +90,4 @@ Potential future enhancements could include:
 
 - Design and Development: Award-winning design team
 - Photography: Placeholder images until client provides actual photography
-- Fonts: Google Fonts (Cormorant Garamond, Montserrat) 
+- Fonts: Google Fonts (Cormorant Garamond, Montserrat) # art_portfolio
